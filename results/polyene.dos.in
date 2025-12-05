@@ -1,0 +1,7 @@
+&DOS
+    prefix = 'polyene',
+    outdir = './',
+    Emin = -20.0,
+    Emax = 10.0,
+    DeltaE = 0.05,
+ /

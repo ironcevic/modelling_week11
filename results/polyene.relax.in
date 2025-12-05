@@ -1,0 +1,47 @@
+ &CONTROL
+    calculation = 'relax',        ! type of calculation
+    outdir      = './'
+    prefix      = 'polyene',      ! name of calculation
+    forc_conv_thr = 1.0d-3,       ! convergence threshold
+
+ /
+
+ &SYSTEM
+    ibrav       = 0,            ! manually defined lattice
+    nat         = 4,            ! # of atoms in the unit cell
+    ntyp        = 2,            ! # of types of atoms in the unit cell
+    ecutwfc     = 40.0,         ! kinetic energy cutoff for psi
+    ecutrho     = 160.0,        ! kinetic energy cutoff for rho
+    occupations = 'smearing',   ! smear out populations
+    smearing    = 'gaussian',   ! use gaussian smearing
+    degauss     = 0.01,        ! width of gaussian 
+ /
+ 
+ &ELECTRONS
+    conv_thr = 1.0d-7           ! convergence threshold
+ /
+
+ &IONS
+    ion_dynamics = 'bfgs',       ! algorithm for relaxation
+ /
+
+ATOMIC_SPECIES                  ! pseudopotentials
+ C  12.011  C.pbe-n-kjpaw_psl.0.1.UPF
+ H  1.0079  H.pbe-kjpaw.UPF
+
+CELL_PARAMETERS angstrom
+  2.46 0.00 0.00
+  0.00 8.00 0.00
+  0.00 0.00 8.00
+
+ATOMIC_POSITIONS angstrom
+   C    0.00 5.00 0.00
+   C    1.03 5.66 0.00
+   H    0.00 3.94 0.00
+   H    1.03 6.72 0.00
+   
+K_POINTS crystal_b
+2
+0.0 0.0 0.0 20
+0.5 0.0 0.0 0 
+
